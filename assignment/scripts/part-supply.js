@@ -9,12 +9,14 @@ console.log('1. Create partsNeeded:');
 let partsNeeded = 40;
 console.log(partsNeeded);
 
+
 // 2. Create a variable called 'supplyChanges' whose value is an array containing
 //    the following numbers: 3, 5, -6, 0, 7, 11.
 console.log('2. Create supplyChanges:');
 
-let supplyChanges = ['3','5','-6','0','7','11']
+let supplyChanges = [3,5,-6,0,7,11];
 console.log(supplyChanges);
+
 
 // 3. Create a variable called 'secondItem' and assign it the value of the second
 //    item in the 'supplyChanges' array.
@@ -23,14 +25,20 @@ console.log('3. Access the second value of supplyChanges:');
 let secondItem = supplyChanges [1];
 console.log(secondItem); 
 
+//!!!test not functioning on HTML file in browser!!!
 
 // 4. The last value in the 'supplyChanges' array was added by mistake.
 //    Remove it from the array and store it inside a new variable called 'removedItem'.
 console.log('4. Remove the last value from supplyChanges:');
 
+let removedItem = supplyChanges.pop();
+console.log(supplyChanges);
 
 // 5. A delivery of 25 more parts arrived. Add the value 25 to the end of the array
 console.log('5. Add the value 25 into supplyChanges.');
+
+supplyChanges.push(25);
+console.log(supplyChanges);
 
 
 // 6. Create three new variables named 'positives', 'negatives', and
@@ -42,7 +50,31 @@ console.log('5. Add the value 25 into supplyChanges.');
 //      - If the value is a zero, push it into the 'zeroes' array.
 console.log('6. Looping through supplyChanges to populate arrays with positive, negative, and zero values:');
 
+let positives = [];
+let zeroes = [];
+let negatives = [];
 
+
+for (let i = 0; i < supplyChanges.length; i++) {
+  if (supplyChanges[i] > 0) {
+    positives.push(supplyChanges[i]);
+    
+  } 
+  if (supplyChanges[i] < 0) {
+    negatives.push(supplyChanges[i]);
+  }  
+  else if (supplyChanges[i] === 0) {
+    zeroes.push(supplyChanges[i]);
+
+  }
+  else {
+    console.log('!!!!!Finally!!!!!');
+  }
+}
+
+console.log('Positive:', positives);
+console.log('Negatives:', negatives);
+console.log('Zeroes:', zeroes);
 
 
 // ***** STRETCH GOALS *********************************************
